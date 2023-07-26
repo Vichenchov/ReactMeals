@@ -1,8 +1,10 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
+import UpperBar from "./components/upperBar/upperbar";
+
 function App() {
   return (
-    <div>
-      <h2>Let's get started!</h2>
-    </div>
+   <UpperBar/>
+   
   );
 }
 
