@@ -1,6 +1,14 @@
 import './MenuItem.css';
 
 function MenuItem(props) {
+    const hr = () => {
+        if (!props.ifLast) {
+            return (<div className='hr'>
+                <hr />
+            </div>)
+        }
+    }
+
     return <>
         <div className='DishMainDiv'>
             <div className='DishInfo'>
@@ -18,6 +26,7 @@ function MenuItem(props) {
                 </div>
             </div>
         </div>
+        {hr()}
     </>
 }
 

@@ -7,7 +7,7 @@ import Menu from './components/Menu/Menu'
 function App() {
   return (
     <>
-      {/* <div className="mainDiv">
+      <div className="mainDiv">
         <UpperBar title="ReactMeals" />
         <div className="diagonal-crop">
           <img src={Img} className="imgSize diagonal-crop" />
@@ -15,8 +15,10 @@ function App() {
         <div className="desDiv">
           <Description />
         </div>
-      </div> */}
-      <Menu/>
+        <div className='menuDiv'>
+          <Menu />
+        </div>
+      </div>
     </>
   )
 }

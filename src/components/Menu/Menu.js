@@ -26,13 +26,14 @@ function Menu(props) {
     return (
         <div className="MenuDiv">
             {
-                Dishes.map((key, index) => (
+                Dishes.map((key, index) =>
                     <MenuItem
+                        key={index}
                         name={Dishes[index].Name}
                         des={Dishes[index].Description}
-                        price={Dishes[index].Price} />
-
-                ))
+                        price={Dishes[index].Price}
+                        ifLast={(Dishes.length - 1) == index} />
+                )
             }
         </div>)
 }
