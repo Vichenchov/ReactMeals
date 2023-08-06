@@ -1,12 +1,12 @@
 import React from 'react'
 import CartButton from '../CartButton/CartButton'
-import './UpperBar.css'
+import classes from './UpperBar.module.css'
 
-function UpperBar(props) {
+const UpperBar = (props) => {
   return (
-    <div className="upperBarStyle">
-        <label className="upperBarLabel">{props.title}</label>
-        <CartButton />
+    <div className={classes.upperBarStyle}>
+      <label className={classes.upperBarLabel}>{props.title}</label>
+      <CartButton />
     </div>
   )
 }

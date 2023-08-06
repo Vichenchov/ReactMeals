@@ -1,33 +1,45 @@
-import './MenuItem.css';
+import classes from './MenuItem.module.css'
 
-function MenuItem(props) {
-    const hr = () => {
-        if (!props.ifLast) {
-            return (<div className='hr'>
-                <hr />
-            </div>)
-        }
-    }
-
-    return <>
-        <div className='DishMainDiv'>
-            <div className='DishInfo'>
-                <label className='name'>{props.name}</label>
-                <label className='des'>{props.des}</label>
-                <label className='price'>${props.price}</label>
-            </div>
-            <div className='DishAmount'>
-                <div className='AmountInfo'>
-                    <label className='amountLbl'>Amount</label>
-                    <input type="number" id="quantity" name="quantity" min="1" max="20"></input>
-                </div>
-                <div className='btnCenter'>
-                    <button className='btn btn-primary addBtn btn-sm'>+  ADD</button>
-                </div>
-            </div>
+const MenuItem = (props) => {
+  const hr = () => {
+    if (!props.ifLast) {
+      return (
+        <div className="hr">
+          <hr />
         </div>
-        {hr()}
+      )
+    }
+  }
+
+  return (
+    <>
+      <div className={classes.DishMainDiv}>
+        <div className={classes.DishInfo}>
+          <label className={classes.name}>{props.name}</label>
+          <label className={classes.des}>{props.des}</label>
+          <label className={classes.price}>${props.price}</label>
+        </div>
+        <div className={classes.DishAmount}>
+          <div className={classes.AmountInfo}>
+            <label className={classes.amountLbl}>Amount</label>
+            <input
+              type="number"
+              id="quantity"
+              name="quantity"
+              min="1"
+              max="20"
+            ></input>
+          </div>
+          <div className={classes.btnCenter}>
+            <button className={classes.addBtn + ' btn btn-primary btn-sm'}>
+              + ADD
+            </button>
+          </div>
+        </div>
+      </div>
+      {hr()}
     </>
+  )
 }
 
-export default MenuItem;
+export default MenuItem

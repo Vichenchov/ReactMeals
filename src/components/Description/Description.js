@@ -1,8 +1,8 @@
-import './Description.css'
+import classes from './Description.module.css'
 
-function Description() {
+const Description = () => {
   return (
-    <div className='desStyle'>
+    <div className={classes.desStyle}>
       <h2>Delicious Food, Delivered To You</h2>
       <p>
         Choose your favorite meal from our broad selection of available meals
@@ -16,4 +16,4 @@ function Description() {
   )
 }
 
-export default Description;
+export default Description

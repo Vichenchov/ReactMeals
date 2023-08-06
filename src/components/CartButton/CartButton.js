@@ -1,27 +1,26 @@
-import React, { useState } from 'react';
-import './CartButton.css'
+import React, { useState } from 'react'
+import classes from './CartButton.module.css'
 import CartIcon from '../CartIcon/CartIcon'
-import Modal from '../Modal/Modal';
+import Modal from '../Modal/Modal'
 
-function CartButton(props) {
-  const [ifShow, setIfShow] = useState(false);
+const CartButton = (props) => {
+  // const [ifShow, setIfShow] = useState(false)
 
-  const show = () => {
-    !ifShow ? setIfShow(true) : setIfShow(false);
-  }
+  // const show = () => {
+  //   !ifShow ? setIfShow(true) : setIfShow(false)
+  // }
 
-  const modal = () => {
-    if (ifShow) {
-      return (<Modal />)
-    }
-  }
+  // const modal = () => {
+  //   if (ifShow) {
+  //     return <Modal />
+  //   }
+  // }
 
   return (
-    <div className="CartBtnStyle" onClick={show()}>
+    <div className={classes.CartBtnStyle}>
       <CartIcon />
-      <label className="CartBtnLabel">Your Cart</label>
-      <label className="Counter">2</label>
-      {ifShow && modal()}
+      <label className={classes.CartBtnLabel}>Your Cart</label>
+      <label className={classes.Counter}>2</label>
     </div>
   )
 }

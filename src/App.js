@@ -1,7 +1,6 @@
 import UpperBar from './components/UpperBar/UpperBar'
 import Img from './resources/img/cactus-jack-x-mcdonalds.jpg'
 import Description from './components/Description/Description'
-import MenuItem from './components/MenuItem/MenuItem'
 import Menu from './components/Menu/Menu'
 
 function App() {
@@ -15,7 +14,7 @@ function App() {
         <div className="desDiv">
           <Description />
         </div>
-        <div className='menuDiv'>
+        <div className="menuDiv">
           <Menu />
         </div>
       </div>
