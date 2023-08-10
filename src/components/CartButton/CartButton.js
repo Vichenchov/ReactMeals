@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import classes from './CartButton.module.css'
 import CartIcon from '../CartIcon/CartIcon'
-import Modal from '../Modal/Modal'
 
 const CartButton = (props) => {
   // const [ifShow, setIfShow] = useState(false)

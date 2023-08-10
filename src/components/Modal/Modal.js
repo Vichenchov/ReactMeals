@@ -1,65 +1,27 @@
+import { Fragment } from "react";
+import ReactDOM from "react-dom";
+
 import classes from './Modal.module.css'
 
+const Backdrop = (props) => {
+    return <div className={classes.backdrop}></div>;
+};
+
+const ModalOverlay = (props) => {
+    return (<div className={classes.modal}>
+        <div className={classes.content}>{props.children}</div>
+    </div>);
+};
+
+const portalElement = document.getElementById('overlays');
+
 const Modal = (props) => {
-  // const modal = () => {
-  //     if (props.Show) {
-  //         return (<div className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  //             <div class="modal-dialog">
-  //                 <div class="modal-content">
-  //                     <div class="modal-header">
-  //                         <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-  //                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-  //                     </div>
-  //                     <div class="modal-body">
-  //                         ...
-  //                     </div>
-  //                     <div class="modal-footer">
-  //                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-  //                         <button type="button" class="btn btn-primary">Save changes</button>
-  //                     </div>
-  //                 </div>
-  //             </div>
-  //         </div>)
-  //     }
-  // }
-  return (
-    <div
-      className="modal fade"
-      id="exampleModal"
-      tabindex="-1"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">
-              Modal title
-            </h1>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body">...</div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
-            >
-              Close
-            </button>
-            <button type="button" class="btn btn-primary">
-              Save changes
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  )
+    return <Fragment>
+
+        {ReactDOM.createPortal((<Backdrop />), portalElement)}
+        {ReactDOM.createPortal(<ModalOverlay>{props.children}</ModalOverlay>, portalElement)}
+
+    </Fragment>
 }
 
-export default Modal
+export default Modal;
