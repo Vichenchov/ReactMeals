@@ -6,7 +6,7 @@ const UpperBar = (props) => {
   return (
     <div className={classes.upperBarStyle}>
       <label className={classes.upperBarLabel}>{props.title}</label>
-      <CartButton />
+      <CartButton onClick={props.onShowCart} />
     </div>
   )
 }

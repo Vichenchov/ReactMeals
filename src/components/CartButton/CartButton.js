@@ -1,25 +1,20 @@
-import React, { useState } from 'react'
 import classes from './CartButton.module.css'
 import CartIcon from '../CartIcon/CartIcon'
+import { useContext } from 'react'
+import CartContext from '../../store/cart-context'
 
 const CartButton = (props) => {
-  // const [ifShow, setIfShow] = useState(false)
+  const cartCtx = useContext(CartContext)
 
-  // const show = () => {
-  //   !ifShow ? setIfShow(true) : setIfShow(false)
-  // }
-
-  // const modal = () => {
-  //   if (ifShow) {
-  //     return <Modal />
-  //   }
-  // }
+  const numberOfCartItems = cartCtx.items.reduce((curNumber, item) => {
+    return curNumber + item.amount;
+  }, 0);
 
   return (
-    <div className={classes.CartBtnStyle}>
+    <div className={classes.CartBtnStyle} onClick={props.onClick}>
       <CartIcon />
       <label className={classes.CartBtnLabel}>Your Cart</label>
-      <label className={classes.Counter}>2</label>
+      <label className={classes.Counter}>{numberOfCartItems}</label>
     </div>
   )
 }
