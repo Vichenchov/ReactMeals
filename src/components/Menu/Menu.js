@@ -30,6 +30,7 @@ const Menu = (props) => {
       {Dishes.map((key, index) => (
         <MenuItem
           key={index}
+          id={index}
           name={Dishes[index].Name}
           des={Dishes[index].Description}
           price={Dishes[index].Price}
